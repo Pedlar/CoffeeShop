@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="show_venue_padding">20dp</dimen>
+    <dimen name="venue_list_title_text_size">15sp</dimen>
+    <dimen name="list_item_padding">20dp</dimen>
+    <dimen name="venue_list_details_text_size">13sp</dimen>
+    <dimen name="text_size_15">15sp</dimen>
+    <dimen name="size_10">10dp</dimen>
+    <dimen name="text_size_18">18sp</dimen>
+    <dimen name="size_5">5dp</dimen>
+    <dimen name="size_25">25dp</dimen>
+    <dimen name="size_50">50dp</dimen>
+    <dimen name="detail_divider_height">1dp</dimen>
+    <dimen name="text_size_14">14sp</dimen>
+    <dimen name="detail_icon_margin_right">50dp</dimen>
+    <dimen name="detail_icon_dim">30dp</dimen>
+    <dimen name="list_image_width">75dp</dimen>
+    <dimen name="list_image_height">120dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+</resources>

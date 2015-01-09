@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="120dp"
+    android:padding="@dimen/list_item_padding"
+    android:background="?android:selectableItemBackground">
+
+    <TextView
+        android:id="@+id/venue_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/venue_list_title_text_size"
+        android:textColor="@android:color/black"
+        android:textStyle="bold"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/venue_screenshot"
+        tools:text="Venue Name"/>
+
+    <ProgressBar
+        android:id="@+id/progress_spinner"
+        android:layout_width="@dimen/size_25"
+        android:layout_height="@dimen/size_25"
+        android:indeterminate="true"
+        android:indeterminateOnly="true"
+        android:indeterminateBehavior="repeat"
+        android:layout_below="@+id/venue_title"/>
+
+    <TextView
+        android:id="@+id/rating_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/venue_list_details_text_size"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/venue_title"
+        tools:text="8.7"/>
+
+    <RatingBar
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/venue_title"
+        android:layout_toRightOf="@+id/rating_text"
+        android:layout_marginLeft="@dimen/size_10"
+        android:numStars="10"
+        style="?android:attr/ratingBarStyleSmall"/>
+
+    <TextView
+        android:id="@+id/venue_description"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/venue_list_details_text_size"
+        android:layout_below="@+id/rating_text"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/venue_screenshot"
+        tools:text="Description of Venue"/>
+
+    <TextView
+        android:id="@+id/venue_closed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_toLeftOf="@+id/venue_screenshot"
+        android:layout_below="@+id/venue_description"
+        android:textSize="@dimen/venue_list_details_text_size"
+        android:textColor="@android:color/holo_red_light"
+        android:visibility="gone"
+        android:text="@string/closed_today"/>
+
+    <ImageView
+        android:id="@+id/venue_screenshot"
+        android:layout_width="@dimen/list_image_width"
+        android:layout_height="@dimen/list_image_height"
+        android:layout_alignParentRight="true"
+        android:scaleType="centerCrop"/>
+</RelativeLayout>

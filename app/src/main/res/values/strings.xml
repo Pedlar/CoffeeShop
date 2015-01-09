@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Coffee Shops</string>
+    <string name="title_activity_map">Map</string>
+    <string name="show_venue_list">Show Coffee Shops List</string>
+    <string name="closed_today">Closed today</string>
+    <string name="call">CALL</string>
+    <string name="WEBSITE">WEBSITE</string>
+    <string name="title_activity_gallery">GalleryActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="gallery_toolbar_text" formatted="false">%d of %d</string>
+    <string name="gallery_more_images" formatted="false">%d More</string>
+    <string name="distance_mi" formatted="false">%.2f mi</string>
+    <string name="open_now" formatted="false">Open Now: %s</string>
+    <string name="foursquare">FOURSQUARE</string>
+    <string name="network_error">Error retrieving coffee shops.</string>
+    <string name="ok">Ok</string>
+
+</resources>

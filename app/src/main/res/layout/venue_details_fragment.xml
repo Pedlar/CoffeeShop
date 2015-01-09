@@ -1,0 +1,371 @@
+<?xml version="1.0" encoding="utf-8"?>
+<org.notlocalhost.coffeeshop.widget.LockScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:id="@+id/details_title_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/size_10">
+            <TextView
+                android:id="@+id/venue_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_18"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:textColor="@android:color/black"
+                android:textStyle="bold"
+                android:layout_alignParentLeft="true"
+                tools:text="Venue Name"
+                android:layout_marginBottom="@dimen/size_5"/>
+
+            <ProgressBar
+                android:id="@+id/progress_spinner"
+                android:layout_width="@dimen/size_25"
+                android:layout_height="25dp"
+                android:indeterminate="true"
+                android:indeterminateOnly="true"
+                android:indeterminateBehavior="repeat"
+                android:layout_below="@+id/venue_title"/>
+
+            <TextView
+                android:id="@+id/rating_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_15"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/venue_title"
+                android:gravity="center"
+                tools:text="8.7"/>
+
+            <RatingBar
+                android:id="@+id/rating_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/venue_title"
+                android:layout_alignTop="@+id/rating_text"
+                android:layout_alignBottom="@+id/rating_text"
+                android:layout_toRightOf="@+id/rating_text"
+                android:layout_marginLeft="@dimen/size_10"
+                android:numStars="10"
+                android:visibility="gone"
+                style="?android:attr/ratingBarStyleSmall"/>
+
+            <TextView
+                android:id="@+id/distance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_alignTop="@+id/rating_text"
+                android:layout_alignParentRight="true"
+                android:textSize="@dimen/text_size_15"
+                tools:text="17.5 mi"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/call_website_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="3">
+            <LinearLayout
+                android:id="@+id/venue_call"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/call_btn_icon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_phone"
+                    android:layout_marginTop="@dimen/size_5"
+                    android:layout_marginBottom="@dimen/size_5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/call"
+                    android:textSize="@dimen/text_size_18"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/venue_website"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/website_btn_icon"
+                    android:layout_width="@dimen/size_50"
+                    android:layout_height="@dimen/size_50"
+                    android:src="@drawable/ic_globe"
+                    android:layout_marginTop="@dimen/size_5"
+                    android:layout_marginBottom="@dimen/size_5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/WEBSITE"
+                    android:textSize="@dimen/text_size_18"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/venue_foursquare"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:background="?attr/selectableItemBackground">
+
+                <ImageView
+                    android:id="@+id/foursquare_btn_icon"
+                    android:layout_width="@dimen/size_50"
+                    android:layout_height="@dimen/size_50"
+                    android:src="@drawable/ic_foursquare"
+                    android:layout_marginTop="@dimen/size_5"
+                    android:layout_marginBottom="@dimen/size_5"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/foursquare"
+                    android:textSize="@dimen/text_size_18"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/description_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:visibility="gone">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_divider_height"
+                android:background="@android:color/darker_gray"/>
+
+            <TextView
+                android:id="@+id/venue_description"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/text_size_14"
+                android:padding="@dimen/size_10"
+                tools:text="Hello this is a description, isn't it just a lovely description?"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/details_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_divider_height"
+                android:background="@android:color/darker_gray"
+                android:layout_marginBottom="@dimen/size_10"/>
+
+            <LinearLayout
+                android:id="@+id/address_container"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_10">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_pin"
+                    android:layout_marginRight="@dimen/detail_icon_margin_right"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textIsSelectable="true"
+                    tools:text="1090 Someaddress Rd, Austin TX 555555"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/phone_container"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_10">
+
+                <ImageView
+                    android:layout_width="@dimen/detail_icon_dim"
+                    android:layout_height="@dimen/detail_icon_dim"
+                    android:src="@drawable/ic_phone"
+                    android:layout_marginRight="@dimen/detail_icon_margin_right"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/phone_number"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textIsSelectable="true"
+                    tools:text="(512) 555-1212"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/website_container"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_10">
+
+                <ImageView
+                    android:layout_width="@dimen/detail_icon_dim"
+                    android:layout_height="@dimen/detail_icon_dim"
+                    android:src="@drawable/ic_globe"
+                    android:layout_marginRight="@dimen/size_50"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/website"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:textIsSelectable="true"
+                    tools:text="http://www.notlocalhost.org"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/hours_container"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/size_10">
+
+                <ImageView
+                    android:layout_width="@dimen/detail_icon_dim"
+                    android:layout_height="@dimen/detail_icon_dim"
+                    android:src="@drawable/ic_clock"
+                    android:layout_marginRight="@dimen/size_50"
+                    android:layout_gravity="top|left"/>
+
+                <LinearLayout
+                    android:id="@+id/hours_collapsed_container"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/hour_closed"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textIsSelectable="true"
+                        android:text="@string/closed_today"
+                        android:textColor="@android:color/holo_red_dark"
+                        android:visibility="gone"/>
+
+                    <TextView
+                        android:id="@+id/hour_today"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:textIsSelectable="true"
+                        android:visibility="gone"
+                        tools:text="Open Now: 10:00 AM-10:00 PM"/>
+
+                    <ImageView
+                        android:layout_gravity="center_vertical"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="@dimen/size_10"
+                        android:src="@drawable/ic_arrow_expand"/>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/hour_item_container"
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:visibility="gone"/>
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/photos_container"
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:weightSum="2"
+            android:layout_height="150dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/detail_divider_height"
+                android:background="@android:color/darker_gray"
+                android:layout_marginBottom="@dimen/size_10"/>
+
+            <LinearLayout
+                android:weightSum="2"
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="@dimen/size_10">
+
+                <ImageView
+                    android:id="@+id/image_one"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:paddingRight="@dimen/size_10"
+                    android:background="@android:color/black"/>
+
+                <FrameLayout
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="match_parent"
+                    android:paddingLeft="@dimen/size_10">
+
+                    <ImageView
+                        android:id="@+id/image_two"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/black"/>
+
+                    <TextView
+                        android:id="@+id/image_more"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/text_size_18"
+                        android:textStyle="bold"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="bottom|center_horizontal"
+                        android:gravity="center_horizontal"
+                        android:background="#46000000"
+                        tools:text="Hello"/>
+                </FrameLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</org.notlocalhost.coffeeshop.widget.LockScrollView>
